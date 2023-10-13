@@ -1,5 +1,5 @@
-#ifndef PRINTF_H_
-#define PRINTF_H_
+#ifndef MAIN_H_
+#define MAIN_H_
 /*header files*/
 #include <stdio.h>
 #include <unistd.h>
@@ -9,4 +9,4 @@
 /*function prototypes*/
 int _putchar(char c);
 
-#endif
+#endif/*MAIN_H*/
