@@ -6,6 +6,13 @@
  */
 void mynum(int num)
 {
+	/*for negative numbers*/
+	if (num < 0)
+	{
+		_putchar('-');
+		num = -num;
+	}
+	/*for postive numbers*/
 	if (num / 10)
 	{
 		/*recursive function until num / 10 is 0*/
