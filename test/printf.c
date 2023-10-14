@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, str_len = 0, form_length = 0;
+	int i, num, str_len = 0, form_length = 0;
 	va_list args;
 	char *str;
 
@@ -40,6 +40,12 @@ int _printf(const char *format, ...)
 				write(1, str, str_len);
 				form_length += (str_len - 1);
 			}
+		}
+		else if (format[i + 1] == 'd' || format[i + 1] == 'i')
+		{
+			format++;
+			num = va_arg(args, int);
+			mynum(num);
 		}
 		form_length++;
 	}

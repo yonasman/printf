@@ -10,5 +10,6 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+void mynum(int num);
 
 #endif/*MAIN_H*/
