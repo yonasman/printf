@@ -34,13 +34,14 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == 's')
 		{
 			str = va_arg(args, char*);
-			if (str == NULL)
-				return (-1);
-			format++;
-			while (str[str_len] != '\0')
-				str_len++;
-			write(1, str, str_len);
-			form_length += (str_len - 1);
+			if (str != NULL)
+			{
+				format++;
+				while (str[str_len] != '\0')
+					str_len++;
+				write(1, str, str_len);
+				form_length += (str_len - 1);
+			}
 		}
 		form_length++;
 	}
