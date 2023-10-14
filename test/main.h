@@ -11,5 +11,5 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 void mynum(int num);
-
+int num_digit(int num);
 #endif/*MAIN_H*/
