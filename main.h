@@ -7,6 +7,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 /*function prototypes*/
+
 int _putchar(char c);
+int _printf(const char *format, ...);
 
 #endif/*MAIN_H*/
