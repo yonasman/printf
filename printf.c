@@ -2,12 +2,11 @@
 /**
  *_printf -  prints a formatted string
  *@format: a format specifier
- *
  *Return: the format length or count else -1 if null
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i, str_len, form_length = 0;
+	unsigned int i, str_len = 0, form_length = 0;
 	va_list args;
 	char *str;
 
@@ -35,6 +34,8 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == 's')
 		{
 			str = va_arg(args, char*);
+			if (str == NULL)
+				return (-1);
 			format++;
 			while (str[str_len] != '\0')
 				str_len++;

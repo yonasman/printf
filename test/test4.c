@@ -3,7 +3,7 @@ int main ()
 {
 	int len = 0;
 	char a = 'm';
-	char *trs = "me";
+	char *trs = NULL;
 	len = _printf("hello%s", trs);
 	_printf("%c\n", a);
 	_printf("%%\n");
