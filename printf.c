@@ -40,6 +40,8 @@ int _printf(const char *format, ...)
 				write(1, str, str_len);
 				form_length += (str_len - 1);
 			}
+			else
+				return (null);
 		}
 		form_length++;
 	}
