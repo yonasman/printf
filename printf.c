@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == '%')
 		{
-			i++;
+			format++;
 			_putchar('%');
 		}
 		else if (format[i + 1] == 'c')
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == 's')
 		{
 			str = va_arg(args, char*);
-			i++;
+			format++;
 			while (str[str_len] != '\0')
 				str_len++;
 			write(1, str, str_len);
