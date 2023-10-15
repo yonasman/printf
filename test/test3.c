@@ -6,7 +6,7 @@ int main()
 	char *str = "jeo";
 	int num = 12345;
 	int neg = -12345;
-	int bin = 98;
+	int bin = 0;
 	_printf("hello\n");
 	len = _printf("hello\n");
 	_printf("%d\n", len);

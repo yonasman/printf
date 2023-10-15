@@ -2,7 +2,7 @@
 /**
  *mynum - prints to stdout using _putchar
  *@num: number to be printed on stdout
- *Return: 0 if success else -1
+ *Return: number of digits of the binary
  */
 void mynum(int num)
 {
@@ -76,5 +76,5 @@ int binaryof(int num)
 	{
 		_putchar(bin[j] + '0');
 	}
-	return (i - 1);
+	return (i);
 }
