@@ -7,6 +7,7 @@
 int _printf(const char *format, ...)
 {
 	int i, num, bin_len = 0, str_len = 0, form_length = 0;
+	unsigned int unum;
 	va_list args;
 	char *str;
 
@@ -51,9 +52,9 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == 'u')
 		{
 			format++;
-			num = va_arg(args, unsigned int);
-			myuni(num);
-			form_length += (num_digit(num) - 1);
+			unum = va_arg(args, unsigned int);
+			myuni(unum);
+			form_length += (num_digit(unum) - 1);
 		}
 		else if (format[i + 1] == 'b')
 		{
