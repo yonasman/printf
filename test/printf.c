@@ -53,7 +53,7 @@ int _printf(const char *format, ...)
 			format++;
 			num = va_arg(args, int);
 			bin_len += binaryof(num);
-			form_length += bin_len;
+			form_length += (bin_len - 1);
 		}
 		form_length++;
 	}
