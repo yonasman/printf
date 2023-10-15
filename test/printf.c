@@ -48,6 +48,13 @@ int _printf(const char *format, ...)
 			mynum(num);
 			form_length += num_digit(num);
 		}
+		else if (format[i + 1] == 'u')
+		{
+			format++;
+			num = va_arg(args, unsigned int);
+			myuni(num);
+			form_length += (num_digit(num) - 1);
+		}
 		else if (format[i + 1] == 'b')
 		{
 			format++;

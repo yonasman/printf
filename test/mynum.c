@@ -22,6 +22,19 @@ void mynum(int num)
 	_putchar((num % 10) + '0');
 }
 /**
+ *myuni - prints to stdout using _putchar
+ *@num: number to be printed
+ *Return: 0 if success
+ */
+void myuni(unsigned int num)
+{
+	if (num / 10)
+	{
+		myuni(num / 10);
+	}
+	_putchar((num % 10) + '0');
+}
+/**
  *num_digit - count number of digits
  *@num: number to be counted
  *Return: number of digits
