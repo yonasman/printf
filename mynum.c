@@ -47,3 +47,34 @@ int num_digit(int num)
 	}
 	return (count - 1);
 }
+/**
+ *binaryof - convert and print decimal number to binary
+ *@num: number to be converted
+ *Return: 0 if success else -1
+ */
+int binaryof(int num)
+{
+	int i, j;
+	/*store binary number in an array*/
+	int bin[32];
+
+	i = 0;
+
+	if (num == 0) /*to use while loop*/
+	{
+		_putchar(0 + '0');
+		return (1);
+	}
+	while (num > 0) /*dividing num by two untill num is less than 0*/
+	{
+		bin[i] = num % 2; /*storing the last digit in bin*/
+		num = num / 2;
+		i++;
+	}
+	/*reversing bin*/
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(bin[j] + '0');
+	}
+	return (i - 1);
+}

@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, num, str_len = 0, form_length = 0;
+	int i, num, bin_len, str_len = 0, form_length = 0;
 	va_list args;
 	char *str;
 
@@ -47,6 +47,13 @@ int _printf(const char *format, ...)
 			num = va_arg(args, int);
 			mynum(num);
 			form_length += num_digit(num);
+		}
+		else if (format[i + 1] == 'b')
+		{
+			format++;
+			num = va_arg(args, int);
+			bin_len = binaryof(num);
+			form_length += bin_len;
 		}
 		form_length++;
 	}
