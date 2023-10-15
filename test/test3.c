@@ -19,7 +19,7 @@ int main()
 	len = _printf("hello %d\n", num);
 	_printf("%d\n", len);
 	len = _printf("hello %d\n", neg);
-	_printf("%d\n", len);
+	_printf("%i\n", len);
 
 	return (0);
 }

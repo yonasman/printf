@@ -46,6 +46,7 @@ int _printf(const char *format, ...)
 			format++;
 			num = va_arg(args, int);
 			mynum(num);
+			form_length += num_digit(num);
 		}
 		form_length++;
 	}
