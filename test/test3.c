@@ -8,6 +8,7 @@ int main()
 	int num = 12345;
 	int neg = -12345;
 	int bin = 10;
+	int hex = 102345;
 	_printf("hello\n");
 	len = _printf("hello\n");
 	_printf("%d\n", len);
@@ -28,6 +29,10 @@ int main()
 	len = _printf("%o\n", num);
 	_printf("%d\n", len);
 	len = _printf("%u\n", ui);
+	_printf("%d\n", len);
+	len = _printf("%x\n", hex);
+	_printf("%d\n", len);
+	len = _printf("%X\n", hex);
 	_printf("%d\n", len);
 	return (0);
 }

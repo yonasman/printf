@@ -16,4 +16,6 @@ void myuni(unsigned int);
 int num_digit(int num);
 int binaryof(int num);
 int octof(int num);
+int hexi(int num);
+int heXi(int num);
 #endif/*MAIN_H*/
