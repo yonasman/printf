@@ -63,7 +63,7 @@ int num_digit(int num)
 /**
  *binaryof - convert and print decimal number to binary
  *@num: number to be converted
- *Return: 0 if success else -1
+ *Return: number of digit
  */
 int binaryof(int num)
 {
@@ -88,6 +88,37 @@ int binaryof(int num)
 	for (j = i - 1; j >= 0; j--)
 	{
 		_putchar(bin[j] + '0');
+	}
+	return (i);
+}
+/**
+ *octof - convert and print decimal number to octal
+ *@num: number to be converted
+ *Return: number of digit
+ */
+int octof(int num)
+{
+	int i, j;
+	/*store octal number in an array*/
+	int oct[100];
+
+	i = 0;
+
+	if (num == 0) /*to use while loop*/
+	{
+		_putchar(0 + '0');
+		return (1);
+	}
+	while (num > 0) /*dividing num by two untill num is less than 0*/
+	{
+		oct[i] = num % 8; /*storing the last digit in bin*/
+		num = num / 8;
+		i++;
+	}
+	/*reversing oct*/
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(oct[j] + '0');
 	}
 	return (i);
 }

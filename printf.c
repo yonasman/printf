@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, num, bin_len = 0, str_len = 0, form_length = 0;
+	int i, num, bin_len = 0, oct_len = 0, str_len = 0, form_length = 0;
 	unsigned int unum;
 	va_list args;
 	char *str;
@@ -62,6 +62,13 @@ int _printf(const char *format, ...)
 			num = va_arg(args, int);
 			bin_len += binaryof(num);
 			form_length += (bin_len - 1);
+		}
+		else if (format[i + 1] == 'o')
+		{
+			format++;
+			num = va_arg(args, int);
+			oct_len += octof(num);
+			form_length += (oct_len - 1);
 		}
 		form_length++;
 	}

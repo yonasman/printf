@@ -25,8 +25,8 @@ int main()
 	_printf("%b\n", bin);
 	len = _printf("%b\n", bin);
 	_printf("%d\n", len);
-	_printf("Unsigned:[%u]\n", ui);
-	printf("Unsigned:[%u]\n", ui);
+	len = _printf("%o\n", num);
+	_printf("%d\n", len);
 	len = _printf("%u\n", ui);
 	_printf("%d\n", len);
 	return (0);

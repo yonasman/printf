@@ -15,4 +15,5 @@ void mynum(int num);
 void myuni(unsigned int);
 int num_digit(int num);
 int binaryof(int num);
+int octof(int num);
 #endif/*MAIN_H*/
