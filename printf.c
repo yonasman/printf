@@ -98,8 +98,8 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == 'p')
 		{
 			format++;
-                        void * ptr = va_arg(args, void *);
-                        hex_length += hexi(ptr);
+                        void* ptr = va_arg(args, void *);
+                        hex_length += hexi((int)ptr);
                         form_length += (hex_length - 1);
 		}
 		form_length++;
