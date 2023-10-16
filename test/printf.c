@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	unsigned int unum;
 	va_list args;
 	char *str;
+	void *ptr;
 
 	va_start(args, format);
 	if (format == NULL)
@@ -96,12 +97,11 @@ int _printf(const char *format, ...)
 			form_length += (str_len - 1);
 		}
 		else if (format[i + 1] == 'p')
-		{	
+		{
 			format++;
-			void * ptr;
 			ptr = va_arg(args, void *);
 			hex_length += hexi((long)ptr);
-                        form_length += (hex_length - 1);
+			form_length += (hex_length - 1);
 		}
 		form_length++;
 	}
