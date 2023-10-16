@@ -99,9 +99,11 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == 'p')
 		{
 			format++;
+			_putchar('0');
+			_putchar('x');
 			ptr = va_arg(args, void *);
 			hex_length += hexi_ptr(ptr);
-			form_length += (hex_length - 1);
+			form_length += ((hex_length - 1) + 2);
 		}
 		form_length++;
 	}
