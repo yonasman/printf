@@ -100,7 +100,7 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			ptr = va_arg(args, void *);
-			hex_length += hexi((long)ptr);
+			hex_length += hexi_ptr(ptr);
 			form_length += (hex_length - 1);
 		}
 		form_length++;

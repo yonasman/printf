@@ -9,6 +9,7 @@ int main()
 	int neg = -12345;
 	int bin = 10;
 	int hex = 102345;
+	void *addr = (void *)0x7ffe637541f0;
 	_printf("hello\n");
 	len = _printf("hello\n");
 	_printf("%d\n", len);
@@ -35,6 +36,8 @@ int main()
 	len = _printf("%X\n", hex);
 	_printf("%d\n", len);
 	len = _printf("%S\n", "Best\nSchool");
+	_printf("%d\n", len);
+	len = _printf("Address:[%p]\n", addr);
 	_printf("%d\n", len);
 	return (0);
 }
