@@ -39,5 +39,7 @@ int main()
 	_printf("%d\n", len);
 	len = _printf("Address:[%p]\n", addr);
 	_printf("%d\n", len);
+	len = _printf("%r\n", str);
+	_printf("%d\n", len);
 	return (0);
 }

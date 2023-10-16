@@ -96,6 +96,15 @@ int _printf(const char *format, ...)
 			str_len += printS(str);
 			form_length += (str_len - 1);
 		}
+		else if (format[i + 1] == 'r')
+		{
+			format++;
+			str = va_arg(args, char *);
+			if (str == NULL)
+				str = "(null)";
+			str_len += print_rev(str);
+			form_length += (str_len - 1);
+		}
 		else if (format[i + 1] == 'p')
 		{
 			format++;
