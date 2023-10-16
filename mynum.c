@@ -99,7 +99,7 @@ int binaryof(int num)
 int octof(int num)
 {
 	int i, j;
-	/*store octal number in an array*/
+i	/*store octal number in an array*/
 	int oct[100];
 
 	i = 0;
