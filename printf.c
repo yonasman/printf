@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == '%')
 		{
-			i++;
+			format[i]++;
 			_putchar('%');
 		}
 		else if (format[i + 1] == 'c')
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 			str = va_arg(args, char*);
 			if (str != NULL)
 			{
-				i++;
+				format[i]++;
 				while (str[str_len] != '\0')
 					str_len++;
 				write(1, str, str_len);
