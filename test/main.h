@@ -21,4 +21,5 @@ int hexi_ptr(void *ptr);
 int heXi(int num);
 int printS(char *s);
 int print_rev(char *s);
+int rot13(char *s);
 #endif/*MAIN_H*/

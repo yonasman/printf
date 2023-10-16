@@ -3,6 +3,7 @@ int main()
 {
 	unsigned int ui = (unsigned int)INT_MAX + 1024;
 	int len;
+	char rot[] = "hello";
 	char w = 'w';
 	char *str = "jeo";
 	int num = 12345;
@@ -41,5 +42,7 @@ int main()
 	_printf("%d\n", len);
 	len = _printf("%r\n", str);
 	_printf("%d\n", len);
+	len = _printf("%R", rot);
+	_printf("%d", len);
 	return (0);
 }
