@@ -18,4 +18,5 @@ int binaryof(int num);
 int octof(int num);
 int hexi(int num);
 int heXi(int num);
+int printS(char *s);
 #endif/*MAIN_H*/

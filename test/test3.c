@@ -34,5 +34,7 @@ int main()
 	_printf("%d\n", len);
 	len = _printf("%X\n", hex);
 	_printf("%d\n", len);
+	len = _printf("%S\n", "Best\nSchool");
+	_printf("%d\n", len);
 	return (0);
 }

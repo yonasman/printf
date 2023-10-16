@@ -73,3 +73,27 @@ int heXi(int num)
 	}
 	return (i);
 }
+/**
+ *printS - prints special string that are not in ASCII
+ *@s: the string
+ *
+ *Return: the number of charcters printed
+ */
+int printS(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] < 32 || s[i] >= 127)
+		{
+			_putchar('\\');
+			_putchar('x');
+			heXi(s[i]);
+		}
+		else
+			_putchar(s[i]);
+	}
+
+	return (i);
+}

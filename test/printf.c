@@ -32,15 +32,17 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == 's')
 		{
+			format++;
 			str = va_arg(args, char*);
 			if (str != NULL)
 			{
-				format++;
 				while (str[str_len] != '\0')
 					str_len++;
 				write(1, str, str_len);
 				form_length += (str_len - 1);
 			}
+			else
+				str = "(null)";
 		}
 		else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 		{
@@ -83,6 +85,15 @@ int _printf(const char *format, ...)
 			num = va_arg(args, int);
 			hex_length += heXi(num);
 			form_length += (hex_length - 1);
+		}
+		else if (format[i + 1] == 'S')
+		{
+			format++;
+			str = va_arg(args, char *);
+			if (str == NULL)
+				str = "(null)";
+			str_len += printS(str);
+			form_length += (str_len - 1);
 		}
 		form_length++;
 	}
