@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				format++;
 				while (str[str_len] != '\0')
 					str_len++;
-				write(1, &str, str_len);
+				write(1, str, str_len);
 				form_length += (str_len - 1);
 			}
 		}
