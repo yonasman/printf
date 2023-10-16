@@ -84,6 +84,13 @@ int _printf(const char *format, ...)
 			hex_length += heXi(num);
 			form_length += (hex_length - 1);
 		}
+		else if (format[i + 1] == 'p')
+		{
+			format++;
+                        num = va_arg(args, int);
+                        hex_length += heXi(num);
+                        form_length += (hex_length - 1);
+		}
 		form_length++;
 	}
 	va_end(args);
