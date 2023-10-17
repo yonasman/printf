@@ -3,12 +3,14 @@ int main()
 {
 	unsigned int ui = (unsigned int)INT_MAX + 1024;
 	int len;
+	char rot[] = "hello";
 	char w = 'w';
 	char *str = "jeo";
 	int num = 12345;
 	int neg = -12345;
 	int bin = 10;
 	int hex = 102345;
+	void *addr = (void *)0x7ffe637541f0;
 	_printf("hello\n");
 	len = _printf("hello\n");
 	_printf("%d\n", len);
@@ -36,5 +38,11 @@ int main()
 	_printf("%d\n", len);
 	len = _printf("%S\n", "Best\nSchool");
 	_printf("%d\n", len);
+	len = _printf("Address:[%p]\n", addr);
+	_printf("%d\n", len);
+	len = _printf("%r\n", str);
+	_printf("%d\n", len);
+	len = _printf("%R", rot);
+	_printf("%d", len);
 	return (0);
 }

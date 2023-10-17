@@ -7,9 +7,11 @@
 int _printf(const char *format, ...)
 {
 	int i, num, hex_length = 0, bin_len = 0, oct_len = 0, str_len = 0, form_length = 0;
+	int rot_len = 0;
 	unsigned int unum;
 	va_list args;
 	char *str;
+	void *ptr;
 
 	va_start(args, format);
 	if (format == NULL)
@@ -95,13 +97,40 @@ int _printf(const char *format, ...)
 			str_len += printS(str);
 			form_length += (str_len - 1);
 		}
+		else if (format[i + 1] == 'r')
+		{
+			format++;
+			str = va_arg(args, char *);
+			if (str == NULL)
+				str = "(null)";
+			str_len += print_rev(str);
+			form_length += (str_len - 1);
+		}
+		else if (format[i + 1] == 'R')
+		{
+			format++;
+			str = va_arg(args, char *);
+			if (str == NULL)
+				str = "(null)";
+			rot_len += rot13(str);
+			form_length += (rot_len - 1);
+		}
 		else if (format[i + 1] == 'p')
 		{
 			format++;
-			void* ptr;
+<<<<<<< HEAD		void* ptr;
                         ptr = va_arg(args, void *);
                         hex_length += hexi((long)ptr);
                         form_length += (hex_length - 1);
+=======		}
+		else if (format[i + 1] == '+' && format[i + 2] == 'x')
+		{
+			_putchar('0');
+			_putchar('x');
+			ptr = va_arg(args, void *);
+			hex_length += hexi_ptr(ptr);
+			form_length += ((hex_length - 1) + 2);
+>>>>>>> e8a7c9b47fcecc35e0418ae0666999b1e151367c
 		}
 		form_length++;
 	}
