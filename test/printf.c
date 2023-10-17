@@ -53,6 +53,40 @@ int _printf(const char *format, ...)
 			mynum(num);
 			form_length += num_digit(num);
 		}
+		else if (format[i + 1] == '+' && format[i + 2] == 'd')
+		{
+			format++;
+			format++;
+			num = va_arg(args, int);
+			if (num > 0)
+			{
+				_putchar('+');
+				mynum(num);
+				form_length += num_digit(num) + 1;
+			}
+			else
+			{
+				mynum(num);
+				form_length += num_digit(num);
+			}
+		}
+		else if (format[i + 1] == ' ' && format[i + 2] == 'd')
+		{
+			format++;
+			format++;
+			num = va_arg(args, int);
+			if (num > 0)
+			{
+				_putchar(' ');
+				mynum(num);
+				form_length += num_digit(num) + 1;
+			}
+			else
+			{
+				mynum(num);
+				form_length += num_digit(num);
+			}
+		}
 		else if (format[i + 1] == 'u')
 		{
 			format++;
@@ -74,6 +108,15 @@ int _printf(const char *format, ...)
 			oct_len += octof(num);
 			form_length += (oct_len - 1);
 		}
+		else if (format[i + 1] == '#' && format[i + 2] == 'o')
+		{
+			format++;
+			format++;
+			_putchar('0');
+			num = va_arg(args, int);
+			oct_len += octof(num);
+			form_length += ((oct_len - 1) + 1);
+		}
 		else if (format[i + 1] == 'x')
 		{
 			format++;
@@ -81,12 +124,32 @@ int _printf(const char *format, ...)
 			hex_length += hexi(num);
 			form_length += (hex_length - 1);
 		}
+		else if (format[i + 1] == '#' && format[i + 2] == 'x')
+		{
+			format++;
+			format++;
+			_putchar('0');
+			_putchar('x');
+			num = va_arg(args, int);
+			hex_length += hexi(num);
+			form_length += ((hex_length - 1) + 2);
+		}
 		else if (format[i + 1] == 'X')
 		{
 			format++;
 			num = va_arg(args, int);
 			hex_length += heXi(num);
 			form_length += (hex_length - 1);
+		}
+		else if (format[i + 1] == '#' && format[i + 2] == 'X')
+		{
+			format++;
+			format++;
+			_putchar('0');
+			_putchar('X');
+			num = va_arg(args, int);
+			hex_length += heXi(num);
+			form_length += ((hex_length - 1) + 2);
 		}
 		else if (format[i + 1] == 'S')
 		{
@@ -118,14 +181,6 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == 'p')
 		{
 			format++;
-			_putchar('0');
-			_putchar('x');
-			ptr = va_arg(args, void *);
-			hex_length += hexi_ptr(ptr);
-			form_length += ((hex_length - 1) + 2);
-		}
-		else if (format[i + 1] == '+' && format[i + 2] == 'x')
-		{
 			_putchar('0');
 			_putchar('x');
 			ptr = va_arg(args, void *);

@@ -3,13 +3,14 @@ int main()
 {
 	unsigned int ui = (unsigned int)INT_MAX + 1024;
 	int len;
-	char rot[] = "hello";
+	/*char rot[] = "hello";*/
 	char w = 'w';
 	char *str = "jeo";
 	int num = 12345;
 	int neg = -12345;
 	int bin = 10;
 	int hex = 102345;
+	int oct = 12345;
 	void *addr = (void *)0x7ffe637541f0;
 	_printf("hello\n");
 	len = _printf("hello\n");
@@ -42,7 +43,18 @@ int main()
 	_printf("%d\n", len);
 	len = _printf("%r\n", str);
 	_printf("%d\n", len);
-	len = _printf("%R", rot);
-	_printf("%d", len);
+	/*len = _printf("%R", rot);
+	  _printf("%d", len);*/
+	_printf("%+d\n", -6);
+	len = _printf("%+d\n", 6);
+	_printf("%d\n", len);
+	_printf("% d\n", -6);
+	len = _printf("% d\n", 6);
+	_printf("%d\n", len);
+	len = _printf("%#x\n", hex);
+	len = _printf("%#X\n", hex);
+	_printf("%d\n", len);
+	len = _printf("%#o\n", oct);
+	_printf("%d\n", len);
 	return (0);
 }
