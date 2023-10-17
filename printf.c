@@ -118,11 +118,11 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == 'p')
 		{
 			format++;
-<<<<<<< HEAD		void* ptr;
+			void* ptr;
                         ptr = va_arg(args, void *);
                         hex_length += hexi((long)ptr);
                         form_length += (hex_length - 1);
-=======		}
+		}
 		else if (format[i + 1] == '+' && format[i + 2] == 'x')
 		{
 			_putchar('0');
@@ -130,7 +130,6 @@ int _printf(const char *format, ...)
 			ptr = va_arg(args, void *);
 			hex_length += hexi_ptr(ptr);
 			form_length += ((hex_length - 1) + 2);
->>>>>>> e8a7c9b47fcecc35e0418ae0666999b1e151367c
 		}
 		form_length++;
 	}
