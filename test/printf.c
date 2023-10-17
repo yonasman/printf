@@ -118,6 +118,12 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == 'p')
 		{
 			format++;
+			ptr = va_arg(args, void *);
+			hex_length += hexi((long)ptr);
+			form_length += (hex_length - 1);
+		}
+		else if (format[i + 1] == '+' && format[i + 2] == 'x')
+		{
 			_putchar('0');
 			_putchar('x');
 			ptr = va_arg(args, void *);
