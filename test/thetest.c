@@ -15,5 +15,11 @@ int main()
 	len = _printf("%i\n", INT_MAX);
 	_printf("%d\n", len);
 	_printf("%i + %i = %i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	len = _printf("%b\n", -1024);
+	_printf("%b\n", UINT_MAX);
+	len = _printf("%u\n", 1024);
+	_printf("%d\n", len);
+	len = printf("%u\n", 1024);
+	_printf("%d\n", len);
 	return (0);
 }

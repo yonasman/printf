@@ -102,7 +102,7 @@ int _printf(const char *format, ...)
 			format++;
 			unum = va_arg(args, unsigned int);
 			myuni(unum);
-			form_length += (num_digit(unum) - 1);
+			form_length += (num_digit(unum));
 		}
 		else if (format[i + 1] == 'b')
 		{
