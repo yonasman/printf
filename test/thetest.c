@@ -22,5 +22,9 @@ int main()
 	len = printf("%u\n", 1024);
 	_printf("%d\n", len);
 	len = _printf("%S\n", "\x01\x02\x03\x04\x05\x06\x07");
+	len = _printf("%p\n", NULL);
+	printf("%d\n", len);
+	len = _printf("%p%p\n", (void *) 0x6ff42510b6f8, (void *) 0x7fff510236f8);
+	printf("%d\n", len);
 	return (0);
 }
