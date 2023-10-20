@@ -14,6 +14,7 @@ int _printf(const char *format, ...);
 void mynum(int num);
 void myuni(unsigned int);
 int num_digit(int num);
+int num_udigit(unsigned int num);
 int binaryof(int num);
 int octof(int num);
 int hexi(int num);

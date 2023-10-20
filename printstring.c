@@ -14,3 +14,23 @@ void _puts(char *str)
 		_putchar(str[i]);
 	}
 }
+/**
+ *num_udigit - count number of digits
+ *@num: number to be counted
+ *Return: number of digits
+ */
+int num_udigit(unsigned int num)
+{
+	int count = 0;
+
+	if (num == 0) /*to use a while loop*/
+	{
+		count++;
+	}
+	while (num != 0)
+	{
+		num = num / 10;
+		count++;
+	}
+	return (count - 1);
+}
