@@ -22,4 +22,5 @@ int heXi(int num);
 int printS(char *s);
 int print_rev(char *s);
 int rot13(char *s);
+void _puts(char *str);
 #endif/*MAIN_H*/

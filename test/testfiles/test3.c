@@ -56,5 +56,7 @@ int main()
 	_printf("%d\n", len);
 	len = _printf("%#o\n", oct);
 	_printf("%d\n", len);
+	len = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+	printf("%d\n", len);
 	return (0);
 }

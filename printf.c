@@ -27,6 +27,12 @@ int _printf(const char *format, ...)
 			format++;
 			_putchar('%');
 		}
+		else if (format[i + 1] == '!')
+		{
+			format++;
+			_putchar('%');
+			_putchar('!');
+		}
 		else if (format[i + 1] == 'c')
 		{
 			_putchar(va_arg(args, int));
@@ -40,11 +46,15 @@ int _printf(const char *format, ...)
 			{
 				while (str[str_len] != '\0')
 					str_len++;
-				write(1, str, str_len);
+				_puts(str);
 				form_length += (str_len - 1);
 			}
 			else
+			{
 				str = "(null)";
+				write(1, str, 6);
+				form_length += 6 - 1;
+			}
 		}
 		else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 		{
