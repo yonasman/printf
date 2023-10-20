@@ -53,7 +53,6 @@ int _printf(const char *format, ...)
 			{
 				str = "(null)";
 				write(1, str, 6);
-				form_length += 6 - 1;
 			}
 		}
 		else if (format[i + 1] == 'd' || format[i + 1] == 'i')
