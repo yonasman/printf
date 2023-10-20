@@ -127,6 +127,7 @@ int printS(char *s)
 		{
 			_putchar('\\');
 			_putchar('x');
+			_putchar('0');
 			heXi(s[i]);
 		}
 		else
