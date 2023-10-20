@@ -6,20 +6,26 @@
  */
 void mynum(int num)
 {
+	/*using unsigned int unum to handle INT_MIN*/
+	unsigned int unum;
 	/*for negative numbers*/
 	if (num < 0)
 	{
 		_putchar('-');
-		num = -num;
+		unum = (unsigned int) (-1 * num);
+	}
+	else
+	{
+		unum = (unsigned int) (num);
 	}
 	/*for postive numbers*/
-	if (num / 10)
+	if (unum / 10)
 	{
 		/*recursive function until num / 10 is 0*/
-		mynum(num / 10);
+		mynum(unum / 10);
 	}
 	/*prints last digit of num*/
-	_putchar((num % 10) + '0');
+	_putchar((unum % 10) + '0');
 }
 /**
  *myuni - prints to stdout using _putchar
@@ -41,21 +47,25 @@ void myuni(unsigned int num)
  */
 int num_digit(int num)
 {
+	/*to handle INT_MIN*/
+	unsigned int unum;
 	int count = 0;
 
 	/*if negative number account for negative sign*/
 	if (num < 0)
 	{
 		count = 1;
-		num = -1 * num;
+		unum = (unsigned int) (-1 * num);
 	}
-	if (num == 0) /*to use a while loop*/
+	else
+		unum = (unsigned int) (num);
+	if (unum == 0) /*to use a while loop*/
 	{
 		count++;
 	}
-	while (num != 0)
+	while (unum != 0)
 	{
-		num = num / 10;
+		unum = unum / 10;
 		count++;
 	}
 	return (count - 1);

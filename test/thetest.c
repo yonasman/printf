@@ -9,5 +9,11 @@ int main()
 	_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
 	_printf("%");
 	_printf("%!\n");
+	len = printf("%i\n", INT_MIN);
+	len = _printf("%i\n", INT_MIN);
+	_printf("%d\n", len);
+	len = _printf("%i\n", INT_MAX);
+	_printf("%d\n", len);
+	_printf("%i + %i = %i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
 	return (0);
 }
