@@ -63,12 +63,12 @@ int _printf(const char *format, ...)
 			mynum(num);
 			form_length += num_digit(num);
 		}
-		else if (format[i + 1] == '+' && format[i + 2] == 'd')
+		else if (format[i + 1] == '+' && (format[i + 2] == 'd' || format[i + 2] == 'i'))
 		{
 			format++;
 			format++;
 			num = va_arg(args, int);
-			if (num > 0)
+			if (num >= 0)
 			{
 				_putchar('+');
 				mynum(num);
@@ -80,12 +80,12 @@ int _printf(const char *format, ...)
 				form_length += num_digit(num);
 			}
 		}
-		else if (format[i + 1] == ' ' && format[i + 2] == 'd')
+		else if (format[i + 1] == ' ' && (format[i + 2] == 'd' || format[i + 2] == 'i'))
 		{
 			format++;
 			format++;
 			num = va_arg(args, int);
-			if (num > 0)
+			if (num >= 0)
 			{
 				_putchar(' ');
 				mynum(num);
